@@ -7,7 +7,6 @@
 <%@page import="com.mongodb.client.MongoCollection"%>
 <%@page import="com.mongodb.client.MongoDatabase"%>
 <%@page import="com.mongodb.MongoClient"%>
-<%@ include file="newOne.jsp" %>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -18,17 +17,16 @@
 </head>
 
 <%
-
-	/* int port = 27017;
+ 	int port = 27017;
 	
 	String db = "db01";
-	String collection = "people"; */
+	String collection = "people";
 	
-	Member m = new Member();
+	/*Member m = new Member();
 	
 	int port = m.getPort();
 	String db = m.getDB();
-	String collection = m.getCollection();
+	String collection = m.getCollection();*/
 	
 	
 	
@@ -62,19 +60,15 @@
 		
 	}
 	out.println("</table> <br/>");
-
 %>
 
 <%!
-
 	public FindIterable<Document> find(MongoClient mongoClient, MongoDatabase mongoDB, MongoCollection<Document> collection) {
 		
 		FindIterable<Document> doc = collection.find();
 		return doc;
 		
 	}
-
-
 %>
 
 <body>
